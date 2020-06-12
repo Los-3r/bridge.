@@ -14,7 +14,7 @@ Bridge.registerTokens({
     ],
     tokenizer: {
         root: [
-            [/'.*'|'.*'/, 'string'],
+            [/'.*'/, 'string'],
             [/[0-9]+(\.[0-9]+)?/, 'number'],
             [/return|query|variable|temp|math/, 'keyword'],
         ],
