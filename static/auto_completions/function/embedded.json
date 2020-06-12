@@ -1,0 +1,7 @@
+{
+    "@meta": {
+        "is_value": true,
+        "language": "mcfunction"
+    },
+    "@import.value.command": "('/function ' + $dynamic.function_files)"
+}
