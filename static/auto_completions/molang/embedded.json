@@ -1,4 +1,4 @@
 {
-    "@meta": { "is_molang": true },
+    "@meta": { "is_molang": true, "language": "molang" },
     "@import.value.embedded_molang": "$molang.general.boolean and ('query.' + $molang.general.query)"
 }
