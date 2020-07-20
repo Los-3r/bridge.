@@ -4,7 +4,7 @@ import { fetchLatestJson } from '../../src/Utilities/updateApp'
 import { CONNECTION } from '../../src/Utilities/ConnectionStatus'
 import { setupDefaultMenus } from '../UI/Toolbar/setupDefaults'
 import { createNotification } from '../UI/Footer/create'
-import { Discord } from '../UI/Windows/Discord/definition'
+import { Discord as DiscordWindow } from '../UI/Windows/Discord/definition'
 import './DropFile'
 import './ResizeWatcher'
 import './Errors'
@@ -16,14 +16,14 @@ export default async function startUp() {
 
 	setupDefaultMenus()
 	if (process.env.NODE_ENV !== 'development') {
-		let discord_msg = createNotification({
+		let discordMsg = createNotification({
 			icon: 'mdi-discord',
 			message: 'Discord Server',
 			color: '#7289DA',
 			textColor: 'white',
 			onClick: () => {
-				Discord.open()
-				discord_msg.dispose()
+				DiscordWindow.open()
+				discordMsg.dispose()
 			},
 		})
 	}
