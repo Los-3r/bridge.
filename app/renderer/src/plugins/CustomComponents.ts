@@ -1,12 +1,12 @@
 import FetchDefinitions from '../editor/FetchDefinitions'
 import { JSONFileMasks, JSONMask } from '../editor/JSONFileMasks'
-import InformationWindow from '../UI/Windows/Common/Information'
 import EventBus from '../EventBus'
 import { use } from '../Utilities/useAttr'
 import { detachMerge } from '../Utilities/mergeUtils'
 import LightningCache from '../editor/LightningCache'
 import FileType from '../editor/FileType'
 import { ContextEnv } from './scripts/modules/env'
+import { createInformationWindow } from '../UI/Windows/Common/CommonDefinitions'
 
 export interface BridgeComponentClass {
 	component_name: string
@@ -68,10 +68,11 @@ export default class ComponentRegistry {
 		location = 'components'
 	) {
 		if (this.components[component_name] === undefined)
-			return new InformationWindow(
+			return createInformationWindow(
 				'ERROR',
 				`Unknown component "${component_name}"!`
 			)
+
 		//ADD LOCATION TO CONTEXT ENV
 		ContextEnv.value.location = location
 
